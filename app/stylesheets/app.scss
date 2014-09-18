@@ -1,0 +1,159 @@
+
+/*------------------------------------*\
+    #BOX-SIZING
+\*------------------------------------*/
+
+/**
+ * Set the global `box-sizing` state to `border-box`.
+ *
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * paulirish.com/2012/box-sizing-border-box-ftw
+ */
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+
+    &,
+    &:before,
+    &:after {
+        box-sizing: inherit;
+        }
+
+}
+
+/*------------------------------------*\
+    #BASE-CONFIGURATION
+\*------------------------------------*/
+
+$base-font-size: 14px;
+$base-line-height: 20px;
+
+
+/*------------------------------------*\
+    #EXTENDABLE GRID COMPONENT
+\*------------------------------------*/
+
+%grid {
+    margin-left:  -1 * $base-line-height;
+    list-style: none;
+    font-size: 0;
+
+    box-sizing: border-box;
+}
+    
+    %grid_item {
+        font-size: $base-font-size;
+        margin-left: 0;
+        display: inline-block;
+        width: 100%;
+        padding-left: $base-line-height;
+        vertical-align: top;
+    }
+
+/*------------------------------------*\
+    #EXTENDABLE CONTAINER
+\*------------------------------------*/
+
+/** 
+ * Was implemented as a extend fragment, several issues with the @extend
+ * directive in libsass. https://github.com/sass/libsass/issues/146
+ */
+
+@mixin container() {
+    
+    padding-left: $base-line-height;
+    padding-right: $base-line-height;
+
+    @media (min-width: 42em){
+        padding-left: 6 * $base-line-height;
+        padding-right: 6 * $base-line-height;
+    }
+}
+
+/*------------------------------------*\
+    #GENERICS
+\*------------------------------------*/
+
+
+html {
+    height: 100%;
+}
+
+body {
+    font: #{$base-font-size}/($base-line-height / $base-font-size) 'open sans';
+    color: #fff;
+    overflow-y: scroll;
+    min-height: 100%;
+    margin: 0;
+}
+
+    .landing {
+        background-color: #5B5579;
+    }
+
+
+/*------------------------------------*\
+    #HERO MODULE
+\*------------------------------------*/
+
+ .hero-content {
+    @include container();
+    background: #2F1D57;
+    padding-top: 6 * $base-line-height;
+    padding-bottom: 6 * $base-line-height;
+
+    > h1 {
+        font-size: 4 * $base-font-size;
+        font-weight: 300;
+    }
+ }
+
+
+/*------------------------------------*\
+    #NAV MODULE
+\*------------------------------------*/
+
+nav {
+    background-color: #2c1231;
+}
+
+.nav-bar {
+    @include container();
+    text-align: center;
+
+    @media (min-width: 32em){
+        text-align: left;
+    }
+
+    > img {
+        vertical-align: top;
+        margin-top: 4px; //slight adjustment for the logo
+    }
+}
+
+/*------------------------------------*\
+    #SELLING POINTS MODULE
+\*------------------------------------*/
+
+.selling-points {
+    @extend %grid;
+    @include container();
+    text-align: center;
+    padding-top: 2 * $base-line-height;
+    padding-bottom: 2 * $base-line-height; 
+}
+
+    .selling-point {
+        @extend %grid_item;
+        
+        @media (min-width: 42em){
+            width: 33.3333%;
+        }
+
+        > h2 {
+            font-size: 1.25 * $base-font-size;
+        } 
+    }
