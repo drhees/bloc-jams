@@ -1,17 +1,20 @@
-@import "../../bower_components/bourbon/dist/bourbon";
+//@import "../../bower_components/bourbon/dist/bourbon";
+//bourbon is failing
+
 @import "utils";
 
-/*------------------------------------*\
-    #GENERICS
-\*------------------------------------*/
-
+/* Generics
+ * =============================================================================
+ *
+ * Description
+ */
 
 html {
     height: 100%;
 }
 
 body {
-    font: #{$base-font-size}/($base-line-height / $base-font-size) 'open sans';
+    font: #{$base-font-size}/($base-line-height / $base-font-size) 'Open Sans';
     color: #fff;
     overflow-y: scroll;
     min-height: 100%;
@@ -29,21 +32,26 @@ body {
  * Create simple vertical spacing between headings
  * and copy.
  */
-h1, h2, h3, h4, h5, h6,
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
     margin-bottom: $base-line-height;
 }
 
-
-/*------------------------------------*\
-    #HERO MODULE
-\*------------------------------------*/
-
+/* Hero Module
+ * =============================================================================
+ *
+ * Description
+ */
  .hero-content {
-    @include container();
     background: #2F1D57;
     background-image: url(/images/hero-bg.jpg);
-    background-size: contain;
+    background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -51,29 +59,29 @@ p {
     padding-top: 6 * $base-line-height;
     padding-bottom: 6 * $base-line-height;
 
-    > h1 {
-        font-size: 4 * $base-font-size;
-        font-weight: 300;
-    }
+        h1 {
+            font-size: 3 * $base-font-size;
+            font-weight: 300;
+        }
 
-    > p {
-        font-size: 1.5 * $base-font-size;
-        font-weight: normal;
-    }
+        p {
+            font-size: 1.5 * $base-font-size;
+            font-weight: normal;
+        }
  }
 
-
-
-/*------------------------------------*\
-    #NAV MODULE
-\*------------------------------------*/
+/* Nav Module
+ * =============================================================================
+ *
+ * Description
+ */
 
 nav {
     background-color: #2c1231;
 }
 
-.nav-bar {
-    @include container();
+.player-header-nav {
+    margin-bottom: 0;
     text-align: center;
 
     @media (min-width: 32em){
@@ -86,26 +94,70 @@ nav {
     }
 }
 
-/*------------------------------------*\
-    #SELLING POINTS MODULE
-\*------------------------------------*/
+/* Selling Points Module
+ * =============================================================================
+ *
+ * Description
+ */
 
-.selling-points {
-    @extend %grid;
-    @include container();
+.selling-point {
     text-align: center;
     padding-top: 2 * $base-line-height;
-    padding-bottom: 2 * $base-line-height; 
+    margin-bottom: $base-line-height;
+
+    h2 {
+            font-size: 1.5 * $base-font-size;
+            margin-bottom: 1.5 * $base-line-height;
+        }
 }
 
-    .selling-point {
-        @extend %grid_item;
-        
-        @media (min-width: 42em){
-            width: 33.3333%;
-        }
+/* Album Header Module
+ * =============================================================================
+ *
+ * Description
+ */
 
-        > h2 {
-            font-size: 1.25 * $base-font-size;
-        } 
+%line-height-loose {
+    line-height: 150%;
+}
+
+.album-header-container {
+     margin-top: 5 * $base-line-height;
+     margin-bottom: 4 * $base-line-height;
+}
+
+    .album-header-information {
+        margin-top: 3 * $base-line-height;
+    }
+
+    .album-title {
+        font-size: 48px;
+        font-weight: 300;
+        @extend %line-loose;
+    }
+
+    .album-author {
+        font-size: 24px;
+        @extend %line-loose;
+    }
+
+    .album-subtitle {
+        font-size: 16px;
+        @extend %line-loose;   
+    }
+
+
+/* Album Table Module
+ * =============================================================================
+ *
+ * Description
+ */
+
+ .album-song-listing {
+    font-weight: 300;
+ }
+
+    .table.album-song-listing td {  // This is why I dont use Bootstrap...specificity hell!
+        padding: $base-line-height;
+        border-top-color: rgba(#fff, 0.4);
     }

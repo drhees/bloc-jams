@@ -1,7 +1,6 @@
-/*------------------------------------*\
-    #RESET
-\*------------------------------------*/
-/**
+/* Reset
+ * =============================================================================
+ *
  * As well as using normalize.css, lets remove all
  * margins from certain elements.
  */
@@ -9,14 +8,14 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset
   margin: 0;
   padding: 0; }
 
-/*------------------------------------*\
-    #BOX-SIZING
-\*------------------------------------*/
-/**
+/* Box Sizing
+ * =============================================================================
+ *
  * Set the global `box-sizing` state to `border-box`.
  *
  * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
  * paulirish.com/2012/box-sizing-border-box-ftw
+ *
  */
 html {
   box-sizing: border-box; }
@@ -24,45 +23,39 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-/*------------------------------------*\
-    #BASE-CONFIGURATION
-\*------------------------------------*/
-/*------------------------------------*\
-    #EXTENDABLE GRID COMPONENT
-\*------------------------------------*/
-.selling-points {
-  margin-left: -20px;
-  list-style: none;
-  font-size: 0;
-  box-sizing: border-box; }
-
-.selling-point {
-  font-size: 14px;
-  margin-left: 0;
-  display: inline-block;
-  width: 100%;
-  padding-left: 20px;
-  vertical-align: top; }
-
-/*------------------------------------*\
-    #EXTENDABLE CONTAINER
-\*------------------------------------*/
-/** 
- * Was implemented as a extend fragment, several issues with the @extend
- * directive in libsass. https://github.com/sass/libsass/issues/146
+/* Base Variables
+ * =============================================================================
+ *
+ * Some base numbers we can use to make our designs more rythmic and avoid
+ * having to use arbitrary values.
+ *
  */
-/*------------------------------------*\
-    #GENERICS
-\*------------------------------------*/
+/* Base Extends
+ * =============================================================================
+ *
+ * Some base extends that we can use. These act as partials that can be inserted
+ * into the CSS.
+ *
+ */
+
+.album-title, .album-author, .album-subtitle {
+  line-height: 150%; }
+
+/* Generics
+ * =============================================================================
+ *
+ * Description
+ */
 html {
   height: 100%; }
 
 body {
-  font: 14px/1.42857 'open sans';
+  font: 14px/1.42857 'Open Sans';
   color: white;
   overflow-y: scroll;
   min-height: 100%;
   margin: 0;
+  background: -webkit-radial-gradient(#2b1339, #380c77);
   background: radial-gradient(#2b1339, #380c77);
   border-radius: 4px; }
 
@@ -76,71 +69,92 @@ body {
 h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 20px; }
 
-/*------------------------------------*\
-    #HERO MODULE
-\*------------------------------------*/
+/* Hero Module
+ * =============================================================================
+ *
+ * Description
+ */
 .hero-content {
-  padding-left: 20px;
-  padding-right: 20px;
   background: #2f1d57;
   background-image: url(/images/hero-bg.jpg);
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position-x: center;
   padding-top: 120px;
   padding-bottom: 120px; }
-  @media (min-width: 42em) {
-    .hero-content {
-      padding-left: 120px;
-      padding-right: 120px; } }
-  .hero-content > h1 {
-    font-size: 56px;
+  .hero-content h1 {
+    font-size: 42px;
     font-weight: 300; }
-  .hero-content > p {
+  .hero-content p {
     font-size: 21px;
     font-weight: normal; }
 
-/*------------------------------------*\
-    #NAV MODULE
-\*------------------------------------*/
+/* Nav Module
+ * =============================================================================
+ *
+ * Description
+ */
 nav {
   background-color: #2c1231; }
 
-.nav-bar {
-  padding-left: 20px;
-  padding-right: 20px;
+.player-header-nav {
+  margin-bottom: 0;
   text-align: center; }
-  @media (min-width: 42em) {
-    .nav-bar {
-      padding-left: 120px;
-      padding-right: 120px; } }
   @media (min-width: 32em) {
-    .nav-bar {
+    .player-header-nav {
       text-align: left; } }
-  .nav-bar > img {
+  .player-header-nav > img {
     vertical-align: top;
     margin-top: 4px; }
 
-/*------------------------------------*\
-    #SELLING POINTS MODULE
-\*------------------------------------*/
-.selling-points {
-  padding-left: 20px;
-  padding-right: 20px;
+/* Selling Points Module
+ * =============================================================================
+ *
+ * Description
+ */
+.selling-point {
   text-align: center;
   padding-top: 40px;
-  padding-bottom: 40px; }
-  @media (min-width: 42em) {
-    .selling-points {
-      padding-left: 120px;
-      padding-right: 120px; } }
+  margin-bottom: 20px; }
+  .selling-point h2 {
+    font-size: 21px;
+    margin-bottom: 30px; }
 
-@media (min-width: 42em) {
-  .selling-point {
-    width: 33.3333%; } }
-.selling-point > h2 {
-  font-size: 17.5px; }
+/* Album Header Module
+ * =============================================================================
+ *
+ * Description
+ */
+
+.album-header-container {
+  margin-top: 100px;
+  margin-bottom: 80px; }
+
+.album-header-information {
+  margin-top: 60px; }
+
+.album-title {
+  font-size: 48px;
+  font-weight: 300; }
+
+.album-author {
+  font-size: 24px; }
+
+.album-subtitle {
+  font-size: 16px; }
+
+/* Album Table Module
+ * =============================================================================
+ *
+ * Description
+ */
+.album-song-listing {
+  font-weight: 300; }
+
+.table.album-song-listing td {
+  padding: 20px;
+  border-top-color: rgba(255, 255, 255, 0.4); }
 
 
 /*# sourceMappingURL=app.css.map*/

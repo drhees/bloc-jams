@@ -4,33 +4,42 @@
 <head>
     <title>Bloc Jams</title>
     <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body class="landing">
-    <nav> <!-- Nav Bar -->
-        <div class="nav-bar">
-            <img src="/images/blocjams.png" alt="Bloc-Jams">
-        </div>
-    </nav>
+     <nav class="player-header-nav navbar">
+       <div class="container">
+         <div class='navbar-header'> <!-- Nav Bar -->
+           <a class='logo navbar-left'>
+             <img src="/images/blocjams.png">
+           </a>
+         </div>
+       </div>
+     </nav>
     <header class="hero-content"> <!-- Hero Content -->
-        <h1>Welcome to Bloc Jams!</h1>
-        <p>Turn the music up!</p>
+        <div class="container">
+            <h1>Welcome to Bloc Jams!</h1>
+            <p>Turn the music up!</p>
+        </div>
     </header>
-    <section class="selling-points"> <!-- Selling Points -->
-        <div class="selling-point">
-            <h2>Choose your music</h2>
-            <p>The world is full of music; why should you have to listen to music that someone else chose?</p>
-        </div>
-        <div class="selling-point">
-            <h2>Unlimited, streaming, ad&#8209;free</h2>
-            <p>No arbitrary limits. No distractions.</p>
-        </div>
-        <div class="selling-point">
-            <h2>Mobile enabled</h2>
-            <p>Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
-        </div>
+    <section class="selling-points container"> <!-- Selling Points -->
+        <div class="row">
+                <div class="col-md-4 selling-point">
+                    <h2>Choose your music</h2>
+                    <p>The world is full of music; why should you have to listen to music that someone else chose?</p>
+                </div>
+                <div class="col-md-4 selling-point">
+                    <h2>Unlimited, streaming, ad&#8209;free</h2>
+                    <p>No arbitrary limits. No distractions.</p>
+                </div>
+                <div class="col-md-4 selling-point">
+                    <h2>Mobile enabled</h2>
+                    <p>Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
+                </div>
+            </div>
     </section>
 </body>
 

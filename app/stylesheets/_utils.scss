@@ -1,8 +1,6 @@
-/*------------------------------------*\
-    #RESET
-\*------------------------------------*/
-
-/**
+/* Reset
+ * =============================================================================
+ *
  * As well as using normalize.css, lets remove all
  * margins from certain elements.
  */
@@ -19,15 +17,15 @@ hr {
     padding: 0;
 }
 
-/*------------------------------------*\
-    #BOX-SIZING
-\*------------------------------------*/
 
-/**
+/* Box Sizing
+ * =============================================================================
+ *
  * Set the global `box-sizing` state to `border-box`.
  *
  * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
  * paulirish.com/2012/box-sizing-border-box-ftw
+ *
  */
 
 html {
@@ -35,61 +33,38 @@ html {
 }
 
 * {
-
     &,
     &:before,
     &:after {
         box-sizing: inherit;
         }
-
 }
 
-/*------------------------------------*\
-    #BASE-CONFIGURATION
-\*------------------------------------*/
+
+/* Base Variables
+ * =============================================================================
+ *
+ * Some base numbers we can use to make our designs more rythmic and avoid
+ * having to use arbitrary values.
+ *
+ */
 
 $base-font-size: 14px;
 $base-line-height: 20px;
 
 
-/*------------------------------------*\
-    #EXTENDABLE GRID COMPONENT
-\*------------------------------------*/
-
-%grid {
-    margin-left:  -1 * $base-line-height;
-    list-style: none;
-    font-size: 0;
-
-    box-sizing: border-box;
-}
-    
-    %grid_item {
-        font-size: $base-font-size;
-        margin-left: 0;
-        display: inline-block;
-        width: 100%;
-        padding-left: $base-line-height;
-        vertical-align: top;
-    }
-
-/*------------------------------------*\
-    #EXTENDABLE CONTAINER
-\*------------------------------------*/
-
-/** 
- * Was implemented as a extend fragment, several issues with the @extend
- * directive in libsass. https://github.com/sass/libsass/issues/146
+/* Base Extends
+ * =============================================================================
+ *
+ * Some base extends that we can use. These act as partials that can be inserted
+ * into the CSS.
+ *
  */
 
-@mixin container() {
-    
-    padding-left: $base-line-height;
-    padding-right: $base-line-height;
-
-    @media (min-width: 42em){
-        padding-left: 6 * $base-line-height;
-        padding-right: 6 * $base-line-height;
-    }
+%line-tight {
+    line-height: 66.6667%;
 }
-
+ 
+%line-loose {
+    line-height: 150%;
+}
