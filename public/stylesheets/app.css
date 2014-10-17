@@ -41,6 +41,9 @@ html {
 .album-title, .album-author, .album-subtitle {
   line-height: 150%; }
 
+.hero-content h1, .album-title, .album-song-listing, .collection-album-info p {
+  font-weight: 300; }
+
 /* Generics
  * =============================================================================
  *
@@ -69,6 +72,12 @@ body {
 h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 20px; }
 
+/**
+ * Fluid images.
+ */
+img {
+  max-width: 100%; }
+
 /* Hero Module
  * =============================================================================
  *
@@ -84,8 +93,7 @@ h1, h2, h3, h4, h5, h6, p {
   padding-top: 120px;
   padding-bottom: 120px; }
   .hero-content h1 {
-    font-size: 42px;
-    font-weight: 300; }
+    font-size: 42px; }
   .hero-content p {
     font-size: 21px;
     font-weight: normal; }
@@ -135,8 +143,7 @@ nav {
   margin-top: 60px; }
 
 .album-title {
-  font-size: 48px;
-  font-weight: 300; }
+  font-size: 48px; }
 
 .album-author {
   font-size: 24px; }
@@ -149,12 +156,32 @@ nav {
  *
  * Description
  */
-.album-song-listing {
-  font-weight: 300; }
 
 .table.album-song-listing td {
   padding: 20px;
   border-top-color: rgba(255, 255, 255, 0.4); }
+
+/* Collection Module
+ * =============================================================================
+ *
+ * Description
+ */
+.collection-album-container {
+  margin-top: 40px;
+  margin-bottom: 30px; }
+
+.collection-album-info {
+  margin-top: 10px; }
+
+.collection-album-info p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6); }
+
+.collection-album-info a {
+  color: rgba(255, 255, 255, 0.6); }
+
+.collection-album-info .album-name {
+  color: white; }
 
 
 /*# sourceMappingURL=app.css.map*/

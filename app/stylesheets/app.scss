@@ -43,6 +43,14 @@ p {
     margin-bottom: $base-line-height;
 }
 
+/**
+ * Fluid images.
+ */
+
+ img {
+    max-width: 100%;
+ }
+
 /* Hero Module
  * =============================================================================
  *
@@ -61,7 +69,7 @@ p {
 
         h1 {
             font-size: 3 * $base-font-size;
-            font-weight: 300;
+            @extend %text-light;
         }
 
         p {
@@ -132,7 +140,7 @@ nav {
 
     .album-title {
         font-size: 48px;
-        font-weight: 300;
+        @extend %text-light;
         @extend %line-loose;
     }
 
@@ -154,10 +162,39 @@ nav {
  */
 
  .album-song-listing {
-    font-weight: 300;
+    @extend %text-light;
  }
 
     .table.album-song-listing td {  // This is why I dont use Bootstrap...specificity hell!
         padding: $base-line-height;
         border-top-color: rgba(#fff, 0.4);
     }
+
+/* Collection Module
+ * =============================================================================
+ *
+ * Description
+ */
+
+  .collection-album-container {
+     margin-top: 2 * $base-line-height;
+     margin-bottom: 1.5 * $base-line-height;
+  }
+  
+      .collection-album-info {
+         margin-top: $base-line-height/2;
+      }
+      
+      .collection-album-info p {
+         font-size: 16px;
+         @extend %text-light; 
+         color: rgba(#fff, 0.6);
+      }
+      
+      .collection-album-info a {
+        color: rgba(#fff, 0.6);
+      }
+  
+      .collection-album-info .album-name {
+        color: white;
+      }
