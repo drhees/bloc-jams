@@ -119,7 +119,7 @@ var updateCollectionView = function(){
     var $collection = $(".collection-container .row");
         $collection.empty();
         
-        for (var i=0; i < 33; i++){
+        for (var i=0; i < (Math.floor(Math.random() * (100 - 25) + 25)); i++){
              $collection.append(buildAlbumThumbnail());
             // Im would assume that the above line would work in this instance.
             // but am curious why the course assigment asks for a 
